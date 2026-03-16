@@ -1,0 +1,24 @@
+name: raynaud-crest
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - requests
+  - pip:
+    - scvi-tools==1.3.3
+    - scanpy==1.11.5
+    - anndata
+    - gseapy==1.1.10
+    - mygene==3.2.2
+    - biopython
+    - leidenalg
+    - python-igraph
+    - torch

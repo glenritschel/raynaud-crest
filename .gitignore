@@ -1,0 +1,41 @@
+# Data files — too large for git; download via 01_load_qc.py
+data/raw/
+data/processed/*.h5ad
+data/processed/*.h5
+data/processed/raynaud_scvi_model/
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/processed/per_sample/.gitkeep
+
+# Results CSVs are committed; large binary outputs are not
+results/drug_repurposing/**/*.pdf
+logs/*.log
+
+# Windows zone identifier artifacts
+*:Zone.Identifier
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# Conda / venv
+.conda/
+venv/
+env/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+raynaud-crest/data/
+generate_mock_data.py
