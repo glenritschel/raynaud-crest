@@ -1,0 +1,4 @@
+resolution,n_clusters,n_subtypes_resolved,n_distinct_best_clusters,separation_score
+0.5,18,5,5,1.0
+0.8,22,5,5,1.0
+1.2,29,5,5,1.0

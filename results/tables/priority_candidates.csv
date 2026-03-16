@@ -1,0 +1,47 @@
+compound,max_reversal_score,n_clusters,clusters,best_cluster,best_cluster_celltype,hits_raynaud,hits_ssc,hits_vasospasm,novelty_tier,moa,priority_score
+WZ-3105,31.70424404551526,14,"0,12,13,14,15,16,17,2,3,4,6,7,8,9",16,capillary_EC,0,0,0,NOVEL_ALL,SRC/ABL inhibitor,1331.6
+CGP-60474,25.097377470895623,13,"12,13,14,15,16,17,3,4,5,6,7,8,9",4,lymphatic_EC,0,0,0,NOVEL_ALL,CDK1/2 inhibitor,978.8
+AS-605240,27.128213678946203,8,"10,13,16,3,4,6,8,9",3,venous_EC,0,0,0,NOVEL_ALL,PI3K-gamma inhibitor,651.1
+PD-0325901,23.23849463517552,9,"10,14,17,3,4,6,7,8,9",4,lymphatic_EC,0,0,0,NOVEL_ALL,MEK1/2 inhibitor,627.4
+QL-XII-47,33.549013499532165,5,"0,1,11,2,4",11,pericyte,0,0,0,NOVEL_ALL,MELK/FLT3 inhibitor,503.2
+AT-7519,25.27824612177079,6,"12,15,16,17,4,6",4,lymphatic_EC,0,0,0,NOVEL_ALL,unknown,455.0
+PD-184352,25.86311834142141,5,"10,5,7,8,9",7,pericyte,0,0,0,NOVEL_ALL,MEK1/2 inhibitor,387.9
+WZ-4-145,25.422566420141493,5,"10,13,3,8,9",3,venous_EC,0,0,0,NOVEL_ALL,CDK8 inhibitor,381.3
+PF-431396,22.75624050210073,5,"10,12,15,16,8",16,capillary_EC,0,0,0,NOVEL_ALL,unknown,341.3
+LDN-193189,34.25654253442406,9,"0,1,11,16,2,4,6,8,9",11,pericyte,1,0,2,KNOWN,BMP receptor ALK2/ALK3 inhibitor,308.3
+gefitinib,29.44347566793744,10,"10,13,15,16,3,5,6,7,8,9",9,pericyte,0,1,6,KNOWN,EGFR inhibitor,294.4
+AZD-5438,23.981806202968297,4,"13,4,5,8",4,lymphatic_EC,0,0,0,NOVEL_ALL,unknown,287.8
+BI-2536,25.70034366039268,3,"0,1,11",11,pericyte,0,0,0,NOVEL_ALL,PLK1 inhibitor,231.3
+canertinib,28.66227531747463,8,"10,13,15,16,3,4,6,9",4,lymphatic_EC,0,1,0,KNOWN,Pan-EGFR inhibitor,229.3
+radicicol,24.33735750221111,9,"0,1,10,11,17,2,3,5,6",11,pericyte,3,1,2,KNOWN,HSP90 inhibitor,219.0
+XMD-1150,22.020466480917023,3,"0,1,2",0,arterial_EC_mixed,0,0,0,NOVEL_ALL,ERK5 inhibitor,198.2
+AZD-7762,22.016065725407856,3,"0,14,9",9,pericyte,0,0,0,NOVEL_ALL,unknown,198.1
+JNK-9L,21.101834699942984,3,"0,1,12",0,arterial_EC_mixed,0,0,0,NOVEL_ALL,unknown,189.9
+mitoxantrone,25.373322504453142,7,"13,15,2,3,5,7,8",8,arterial_EC_mixed,0,4,0,KNOWN,Topoisomerase II inhibitor,177.6
+geldanamycin,28.882033349806814,6,"13,15,5,7,8,9",9,pericyte,2,3,8,KNOWN,HSP90 inhibitor,173.3
+alvocidib,23.40829423972256,6,"12,13,3,4,5,7",7,pericyte,1,0,1,KNOWN,CDK1/2/4/6/9 inhibitor (flavopiridol),140.4
+I-BET151,22.470845091486733,2,"1,2",2,pericyte_mixed,0,0,0,NOVEL_ALL,unknown,134.8
+celastrol,25.95941658122529,5,"0,1,11,17,2",11,pericyte,0,3,8,KNOWN,NF-kB/HSP90 inhibitor,129.8
+foretinib,27.14308974308488,4,"11,12,15,17",11,pericyte,1,0,0,KNOWN,unknown,108.6
+lapatinib,25.422566420141493,4,"3,4,6,9",3,venous_EC,0,2,1,KNOWN,EGFR/HER2 dual inhibitor,101.7
+pelitinib,16.562735143773274,2,"1,15",1,arterial_EC,0,0,0,NOVEL_ALL,Pan-EGFR inhibitor,99.4
+withaferin-a,30.55990533745277,3,"0,11,13",11,pericyte,0,1,3,KNOWN,NF-kB/HSP90 inhibitor,91.7
+PF-562271,14.56380466163096,2,"12,14",14,capillary_EC,0,0,0,NOVEL_ALL,unknown,87.4
+PLX-4720,21.82576278400682,4,"15,5,7,8",7,pericyte,0,1,0,KNOWN,BRAF V600E inhibitor,87.3
+A443654,23.95520831565897,1,7,7,pericyte,0,0,0,NOVEL_ALL,unknown,71.9
+selumetinib,23.23849463517552,3,"10,4,6",4,lymphatic_EC,0,2,0,KNOWN,MEK1/2 inhibitor,69.7
+BMS-345541,22.556160423740724,3,"12,14,17",17,capillary_EC,0,1,2,KNOWN,unknown,67.7
+AZD-8330,18.914107034530367,1,10,10,capillary_EC_mixed,0,0,0,NOVEL_ALL,MEK1/2 inhibitor,56.7
+BMS-387032,16.621664412721778,1,14,14,capillary_EC,0,0,0,NOVEL_ALL,unknown,49.9
+LY2603618,16.19365720104534,1,1,1,arterial_EC,0,0,0,NOVEL_ALL,unknown,48.6
+I-BET,16.068301389341098,1,1,1,arterial_EC,0,0,0,NOVEL_ALL,unknown,48.2
+WYE-125132,15.99844272949831,1,5,5,pericyte,0,0,0,NOVEL_ALL,mTORC1/2 inhibitor,48.0
+belinostat,15.368116800245122,1,5,5,pericyte,0,0,0,NOVEL_ALL,unknown,46.1
+linifanib,13.712158784951598,1,15,15,pericyte,0,0,0,NOVEL_ALL,unknown,41.1
+PHA-793887,12.606042886636518,1,14,14,capillary_EC,0,0,0,NOVEL_ALL,unknown,37.8
+chelerythrine chloride,22.556160423740724,1,17,17,capillary_EC,0,0,8,NOVEL_RAYNAUD,PKC inhibitor,33.8
+nilotinib,25.119683744152887,1,11,11,pericyte,4,17,15,KNOWN,unknown,25.1
+mocetinostat,14.888928947545194,1,12,12,pericyte_mixed,0,0,1,NOVEL_RAYNAUD,unknown,22.3
+dasatinib,15.090050184401347,1,5,5,pericyte,1,16,20,KNOWN,SRC/BCR-ABL inhibitor,15.1
+ruxolitinib,14.98953133902565,1,15,15,pericyte,1,16,5,KNOWN,unknown,15.0
+NVP-BEZ235,13.262977913721803,1,15,15,pericyte,2,0,0,KNOWN,unknown,13.3

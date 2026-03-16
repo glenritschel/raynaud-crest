@@ -1,0 +1,9 @@
+cell_type,n_cells,vasospasm,endothelial_injury,impaired_angiogenesis,oxidative_stress,pericyte_dysfunction
+pericyte,10472,0.6281,0.3489,0.1616,0.2517,0.9888
+arterial_EC_mixed,4319,0.0853,0.1057,0.1047,0.2293,0.1221
+pericyte_mixed,3840,0.1951,0.1856,0.4814,0.4728,0.2779
+venous_EC,3584,0.2291,0.7614,0.2285,0.3833,0.2453
+arterial_EC,2338,0.2195,0.3104,0.3052,0.453,0.2622
+capillary_EC_mixed,2323,0.4952,0.6982,0.3121,0.4671,0.841
+capillary_EC,1778,0.0995,0.3584,0.0824,0.6642,0.1683
+lymphatic_EC,268,0.1268,0.4262,0.288,0.3094,0.4296
