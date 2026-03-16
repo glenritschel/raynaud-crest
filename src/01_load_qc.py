@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import scanpy as sc
 import scipy.sparse as sp
-import mygene
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 RAW_H5_DIR = os.path.join(DATA_DIR, "raw", "GSE138669")
@@ -19,14 +18,14 @@ PERICYTE_MARKERS = ["PDGFRB", "RGS5", "ACTA2", "NOTCH3", "DES", "CNN1"]
 ALL_VASCULAR_MARKERS = EC_MARKERS + PERICYTE_MARKERS
 VASCULAR_EXPR_THRESHOLD = 0.5
 VASCULAR_MIN_MARKERS = 1
-N_DEV_SAMPLES = 2
+N_DEV_SAMPLES = None  # None = all 22 samples; set to 2 for dev run
 
 def find_h5_samples(h5_dir, n_samples=None):
     h5_files = sorted(glob.glob(os.path.join(h5_dir, "*_feature_bc_matrix.h5")))
     if not h5_files:
         print("ERROR: No .h5 files found in", h5_dir)
         sys.exit(1)
-    samples = [(os.path.basename(f).replace("raw_feature_bc_matrix.h5","").rstrip("_"), f) for f in h5_files]
+    samples = [(os.path.basename(f).replace("raw_feature_bc_matrix.h5", "").rstrip("_"), f) for f in h5_files]
     if n_samples:
         samples = samples[:n_samples]
     print("  Found", len(samples), ".h5 files")
@@ -38,26 +37,6 @@ def load_10x_h5(h5_path, sample_id):
     sc.pp.filter_cells(adata, min_counts=1)
     adata.obs["sample"] = sample_id
     adata.obs_names = [sample_id + "_" + bc for bc in adata.obs_names]
-    return adata
-
-def map_gene_symbols(adata):
-    mg = mygene.MyGeneInfo()
-    gene_ids = adata.var_names.tolist()
-    print("  Mapping", len(gene_ids), "gene IDs...")
-    result = mg.querymany(gene_ids, scopes="ensembl.gene", fields="symbol", species="human", returnall=False, verbose=False)
-    id_to_symbol = {r["query"]: r["symbol"] for r in result if "symbol" in r and "query" in r}
-    new_names = [id_to_symbol.get(g, g) for g in gene_ids]
-    seen = {}
-    deduped = []
-    for name in new_names:
-        if name in seen:
-            seen[name] += 1
-            deduped.append(name + "_" + str(seen[name]))
-        else:
-            seen[name] = 0
-            deduped.append(name)
-    adata.var_names = deduped
-    print("  Mapped", sum(1 for g in gene_ids if g in id_to_symbol), "/", len(gene_ids))
     return adata
 
 def apply_qc(adata):
@@ -137,20 +116,18 @@ def main():
     print("\n  Concatenating", len(adatas), "samples...")
     adata_combined = sc.concat(list(adatas.values()), join="outer", fill_value=0)
     print("  Combined:", adata_combined.n_obs, "cells x", adata_combined.n_vars, "genes")
-    print("\n[3/6] Mapping gene IDs...")
-    adata_combined = map_gene_symbols(adata_combined)
     adata_combined.layers["counts"] = sp.csr_matrix(adata_combined.X) if not sp.issparse(adata_combined.X) else adata_combined.X.copy()
-    print("\n[4/6] QC filtering...")
+    print("\n[3/6] QC filtering...")
     adata_qc = apply_qc(adata_combined)
     qc_path = os.path.join(PROCESSED_DIR, "raynaud_qc.h5ad")
     adata_qc.write_h5ad(qc_path)
     pd.DataFrame([{"sample": sid, "n_cells": a.n_obs} for sid, a in adatas.items()]).to_csv(os.path.join(PROCESSED_DIR, "qc_summary.csv"), index=False)
     print("  Saved:", adata_qc.n_obs, "cells ->", qc_path)
-    print("\n[5/6] Isolating vascular cells...")
+    print("\n[4/6] Isolating vascular cells...")
     adata_vasc = isolate_vascular_cells(adata_qc)
     if adata_vasc.n_obs < 100:
         print("WARNING: Very few vascular cells. Consider lowering VASCULAR_EXPR_THRESHOLD.")
-    print("\n[6/6] Selecting HVGs...")
+    print("\n[5/6] Selecting HVGs...")
     adata_vasc = select_hvg(adata_vasc)
     vasc_path = os.path.join(PROCESSED_DIR, "adata_vascular.h5ad")
     adata_vasc.write_h5ad(vasc_path)
